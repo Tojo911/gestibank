@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- Use this file to deploy some handlers/chains and services      --><!-- Two ways to do this:                                           --><!--   java org.apache.axis.client.AdminClient deploy.wsdd          --><!--      after the axis server is running                          --><!-- or                                                             --><!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   --><!--      from the same directory that the Axis engine runs         --><deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from EmployeeServiceImplService WSDL service -->
+
+  <service name="EmployeeServiceImpl" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://service.wha.com"/>
+      <parameter name="wsdlServiceElement" value="EmployeeServiceImplService"/>
+      <parameter name="schemaQualified" value="http://service.wha.com,http://model.wha.com"/>
+      <parameter name="wsdlServicePort" value="EmployeeServiceImpl"/>
+      <parameter name="className" value="com.wha.service.EmployeeServiceImpl"/>
+      <parameter name="wsdlPortType" value="EmployeeServiceImpl"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation xmlns:operNS="http://service.wha.com" xmlns:retNS="http://service.wha.com" xmlns:rtns="http://service.wha.com" xmlns:tns="http://service.wha.com" name="getAllEmployees" qname="operNS:getAllEmployees" returnQName="retNS:getAllEmployeesReturn" returnType="rtns:ArrayOf_xsd_anyType" returnItemQName="tns:item" soapAction="">
+      </operation>
+      <operation xmlns:operNS="http://service.wha.com" name="deleteEmployee" qname="operNS:deleteEmployee" soapAction="">
+        <parameter xmlns:pns="http://service.wha.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:employeeId" type="tns:int"/>
+      </operation>
+      <operation xmlns:operNS="http://service.wha.com" name="addEmployee" qname="operNS:addEmployee" soapAction="">
+        <parameter xmlns:pns="http://service.wha.com" xmlns:tns="http://model.wha.com" qname="pns:employee" type="tns:Employee"/>
+      </operation>
+      <operation xmlns:operNS="http://service.wha.com" xmlns:retNS="http://service.wha.com" xmlns:rtns="http://model.wha.com" name="getEmployee" qname="operNS:getEmployee" returnQName="retNS:getEmployeeReturn" returnType="rtns:Employee" soapAction="">
+        <parameter xmlns:pns="http://service.wha.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:empid" type="tns:int"/>
+      </operation>
+      <operation xmlns:operNS="http://service.wha.com" xmlns:retNS="http://service.wha.com" xmlns:rtns="http://model.wha.com" name="updateEmployee" qname="operNS:updateEmployee" returnQName="retNS:updateEmployeeReturn" returnType="rtns:Employee" soapAction="">
+        <parameter xmlns:pns="http://service.wha.com" xmlns:tns="http://model.wha.com" qname="pns:employee" type="tns:Employee"/>
+      </operation>
+      <operation xmlns:operNS="http://service.wha.com" name="setEmployeeDAO" qname="operNS:setEmployeeDAO" soapAction="">
+        <parameter xmlns:pns="http://service.wha.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:employeeDAO" type="tns:anyType"/>
+      </operation>
+      <parameter name="allowedMethods" value="setEmployeeDAO updateEmployee getEmployee deleteEmployee getAllEmployees addEmployee"/>
+
+      <typeMapping xmlns:ns="http://service.wha.com" qname="ns:&gt;updateEmployee" type="java:com.wha.service.UpdateEmployee" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://service.wha.com" qname="ns:&gt;getAllEmployeesResponse" type="java:com.wha.service.GetAllEmployeesResponse" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://service.wha.com" qname="ns:&gt;deleteEmployeeResponse" type="java:com.wha.service.DeleteEmployeeResponse" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://service.wha.com" qname="ns:&gt;setEmployeeDAO" type="java:com.wha.service.SetEmployeeDAO" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://service.wha.com" qname="ns:&gt;getEmployeeResponse" type="java:com.wha.service.GetEmployeeResponse" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://service.wha.com" qname="ns:&gt;addEmployeeResponse" type="java:com.wha.service.AddEmployeeResponse" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://service.wha.com" qname="ns:&gt;setEmployeeDAOResponse" type="java:com.wha.service.SetEmployeeDAOResponse" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://service.wha.com" qname="ns:&gt;updateEmployeeResponse" type="java:com.wha.service.UpdateEmployeeResponse" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://service.wha.com" qname="ns:&gt;deleteEmployee" type="java:com.wha.service.DeleteEmployee" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://model.wha.com" qname="ns:Employee" type="java:com.wha.model.Employee" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://service.wha.com" qname="ns:&gt;getAllEmployees" type="java:com.wha.service.GetAllEmployees" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://service.wha.com" qname="ns:&gt;getEmployee" type="java:com.wha.service.GetEmployee" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://service.wha.com" qname="ns:&gt;addEmployee" type="java:com.wha.service.AddEmployee" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <arrayMapping xmlns:ns="http://service.wha.com" xmlns:cmp-ns="http://www.w3.org/2001/XMLSchema" qname="ns:ArrayOf_xsd_anyType" type="java:java.lang.Object[]" innerType="cmp-ns:anyType" encodingStyle=""/>
+  </service>
+</deployment>
