@@ -1,17 +1,26 @@
 package com.wha.model;
 
 import java.io.Serializable;
+
 import javax.persistence.*;
+
+import com.wha.model.Demande;
+import com.wha.model.Notification;
+import com.wha.model.Operation;
+import com.wha.model.Utilisateur;
+
 import java.util.Date;
 import java.util.List;
+//tient
 
-//P3
 /**
  * The persistent class for the compte database table.
  * 
  */
 @Entity
 @NamedQuery(name="Compte.findAll", query="SELECT c FROM Compte c")
+@Inheritance(strategy=InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(name="type",discriminatorType=DiscriminatorType.STRING)
 public class Compte implements Serializable {
 	private static final long serialVersionUID = 1L;
 

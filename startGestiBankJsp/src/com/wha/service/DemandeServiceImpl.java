@@ -6,45 +6,45 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.wha.dao.CompteDAO;
-import com.wha.model.Compte;
+import com.wha.dao.DemandeDAO;
+import com.wha.model.Demande;
 
 @Service
 @Transactional
-public class DemandeServiceImpl implements CompteService {
+public class DemandeServiceImpl implements DemandeService {
 
 	@Autowired
-    private CompteDAO compteDAO;
+    private DemandeDAO demandeDAO;
  
     @Override
     @Transactional
-    public void addCompte(Compte compte) {
-        compteDAO.addCompte(compte);
-    }
- 
-    @Override
-    @Transactional
-    public List<Compte> getAllComptes() {
-        return compteDAO.getAllComptes();
+    public void addDemande(Demande demande) {
+        demandeDAO.addDemande(demande);
     }
  
     @Override
     @Transactional
-    public void deleteCompte(Integer compteId) {
-        compteDAO.deleteCompte(compteId);
+    public List<Demande> getAllDemandes() {
+        return demandeDAO.getAllDemandes();
     }
  
-    public Compte getCompte(int cptid) {
-        return compteDAO.getCompte(cptid);
+    @Override
+    @Transactional
+    public void deleteDemande(Integer demandeId) {
+        demandeDAO.deleteDemande(demandeId);
     }
  
-    public Compte updateCompte(Compte compte) {
+    public Demande getDemande(int dmdid) {
+        return demandeDAO.getDemande(dmdid);
+    }
+ 
+    public Demande updateDemande(Demande demande) {
         // TODO Auto-generated method stub
-        return compteDAO.updateCompte(compte);
+        return demandeDAO.updateDemande(demande);
     }
  
-    public void setCompteDAO(CompteDAO compteDAO) {
-        this.compteDAO = compteDAO;
+    public void setDemandeDAO(DemandeDAO demandeDAO) {
+        this.demandeDAO = demandeDAO;
     }
 
 }

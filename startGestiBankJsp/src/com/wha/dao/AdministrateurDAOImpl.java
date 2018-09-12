@@ -13,8 +13,8 @@ public class AdministrateurDAOImpl implements AdministrateurDAO {
 	@Autowired
     private SessionFactory sessionFactory;
  
-    public void addAdministrateur(Administrateur Administrateur) {
-        sessionFactory.getCurrentSession().saveOrUpdate(Administrateur);
+    public void addAdministrateur(Administrateur administrateur) {
+        sessionFactory.getCurrentSession().saveOrUpdate(administrateur);
  
     }
  
@@ -26,23 +26,23 @@ public class AdministrateurDAOImpl implements AdministrateurDAO {
     }
  
     @Override
-    public void deleteAdministrateur(Integer AdministrateurId) {
-        Administrateur Administrateur = (Administrateur) sessionFactory.getCurrentSession().load(
-                Administrateur.class, AdministrateurId);
-        if (null != Administrateur) {
-            this.sessionFactory.getCurrentSession().delete(Administrateur);
+    public void deleteAdministrateur(Integer administrateurId) {
+        Administrateur administrateur = (Administrateur) sessionFactory.getCurrentSession().load(
+                Administrateur.class, administrateurId);
+        if (null != administrateur) {
+            this.sessionFactory.getCurrentSession().delete(administrateur);
         }
  
     }
  
-    public Administrateur getAdministrateur(int empid) {
+    public Administrateur getAdministrateur(int administrateurId) {
         return (Administrateur) sessionFactory.getCurrentSession().get(
-                Administrateur.class, empid);
+                Administrateur.class, administrateurId);
     }
  
     @Override
-    public Administrateur updateAdministrateur(Administrateur Administrateur) {
-        sessionFactory.getCurrentSession().update(Administrateur);
-        return Administrateur;
+    public Administrateur updateAdministrateur(Administrateur administrateur) {
+        sessionFactory.getCurrentSession().update(administrateur);
+        return administrateur;
     }
 }

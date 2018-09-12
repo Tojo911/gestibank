@@ -13,8 +13,8 @@ public class AgentDAOImpl implements ClientDAO {
 	@Autowired
     private SessionFactory sessionFactory;
  
-    public void addClient(Client Client) {
-        sessionFactory.getCurrentSession().saveOrUpdate(Client);
+    public void addClient(Client client) {
+        sessionFactory.getCurrentSession().saveOrUpdate(client);
  
     }
  
@@ -26,23 +26,23 @@ public class AgentDAOImpl implements ClientDAO {
     }
  
     @Override
-    public void deleteClient(Integer ClientId) {
-        Client Client = (Client) sessionFactory.getCurrentSession().load(
-                Client.class, ClientId);
-        if (null != Client) {
-            this.sessionFactory.getCurrentSession().delete(Client);
+    public void deleteClient(Integer clientId) {
+        Client client = (Client) sessionFactory.getCurrentSession().load(
+                Client.class, clientId);
+        if (null != client) {
+            this.sessionFactory.getCurrentSession().delete(client);
         }
  
     }
  
-    public Client getClient(int empid) {
+    public Client getClient(int clientId) {
         return (Client) sessionFactory.getCurrentSession().get(
-                Client.class, empid);
+                Client.class, clientId);
     }
  
     @Override
-    public Client updateClient(Client Client) {
-        sessionFactory.getCurrentSession().update(Client);
-        return Client;
+    public Client updateClient(Client client) {
+        sessionFactory.getCurrentSession().update(client);
+        return client;
     }
 }

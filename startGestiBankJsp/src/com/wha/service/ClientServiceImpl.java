@@ -14,37 +14,37 @@ import com.wha.model.Client;
 public class ClientServiceImpl implements ClientService {
 
 	@Autowired
-    private ClientDAO ClientDAO;
+    private ClientDAO clientDAO;
  
     @Override
     @Transactional
-    public void addClient(Client Client) {
-        ClientDAO.addClient(Client);
+    public void addClient(Client client) {
+        clientDAO.addClient(client);
     }
  
     @Override
     @Transactional
     public List<Client> getAllClients() {
-        return ClientDAO.getAllClients();
+        return clientDAO.getAllClients();
     }
  
     @Override
     @Transactional
-    public void deleteClient(Integer ClientId) {
-        ClientDAO.deleteClient(ClientId);
+    public void deleteClient(Integer clientId) {
+        clientDAO.deleteClient(clientId);
     }
  
-    public Client getClient(int empid) {
-        return ClientDAO.getClient(empid);
+    public Client getClient(int clientId) {
+        return clientDAO.getClient(clientId);
     }
  
-    public Client updateClient(Client Client) {
+    public Client updateClient(Client client) {
         // TODO Auto-generated method stub
-        return ClientDAO.updateClient(Client);
+        return clientDAO.updateClient(client);
     }
  
-    public void setClientDAO(ClientDAO ClientDAO) {
-        this.ClientDAO = ClientDAO;
+    public void setClientDAO(ClientDAO clientDAO) {
+        this.clientDAO = clientDAO;
     }
 
 }

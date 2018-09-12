@@ -12,28 +12,28 @@ import javax.persistence.*;
 @NamedQuery(name="Constante.findAll", query="SELECT c FROM Constante c")
 public class Constante implements Serializable {
 	private static final long serialVersionUID = 1L;
+	@Id
+	
+	private String nomvar;
 
-	private float tauxagios;
-
-	private float tauxepargne;
+	private String valvar;
 
 	public Constante() {
 	}
 
-	public float getTauxagios() {
-		return this.tauxagios;
+	public String getNomvar() {
+		return nomvar;
 	}
 
-	public void setTauxagios(float tauxagios) {
-		this.tauxagios = tauxagios;
+	public void setNomvar(String nomvar) {
+		this.nomvar = nomvar;
 	}
 
-	public float getTauxepargne() {
-		return this.tauxepargne;
+	public String getValvar() {
+		return valvar;
 	}
 
-	public void setTauxepargne(float tauxepargne) {
-		this.tauxepargne = tauxepargne;
+	public void setValvar(String valvar) {
+		this.valvar = valvar;
 	}
-
 }
