@@ -12,7 +12,7 @@ import java.util.List;
  */
 @Entity
 @NamedQuery(name="Demande.findAll", query="SELECT d FROM Demandedecreationdecompte d")
-public class Demande implements Serializable {
+public class DemandeCreationCompte implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
@@ -55,7 +55,7 @@ public class Demande implements Serializable {
 	@JoinColumn(name="numero_compte_chequier")
 	private Compte compte2;
 
-	public Demande() {
+	public DemandeCreationCompte() {
 	}
 
 	public int getIdDemande() {
@@ -122,27 +122,6 @@ public class Demande implements Serializable {
 		this.typecompteacreer = typecompteacreer;
 	}
 
-	public List<Affectation> getAffectations() {
-		return this.affectations;
-	}
-
-	public void setAffectations(List<Affectation> affectations) {
-		this.affectations = affectations;
-	}
-
-	public Affectation addAffectation(Affectation affectation) {
-		getAffectations().add(affectation);
-		affectation.setDemande(this);
-
-		return affectation;
-	}
-
-	public Affectation removeAffectation(Affectation affectation) {
-		getAffectations().remove(affectation);
-		affectation.setDemande(null);
-
-		return affectation;
-	}
 
 	public Compte getCompte1() {
 		return this.compte1;
