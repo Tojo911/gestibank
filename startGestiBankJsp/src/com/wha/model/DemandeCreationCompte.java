@@ -4,7 +4,7 @@ import java.io.Serializable;
 import javax.persistence.*;
 import java.util.Date;
 import java.util.List;
-
+/*Tojo*/
 
 /**
  * The persistent class for the demande database table.
