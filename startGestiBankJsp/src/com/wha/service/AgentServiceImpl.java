@@ -14,37 +14,37 @@ import com.wha.model.Agent;
 public class AgentServiceImpl implements AgentService {
 
 	@Autowired
-    private AgentDAO AgentDAO;
+    private AgentDAO agentDAO;
  
     @Override
     @Transactional
-    public void addAgent(Agent Agent) {
-        AgentDAO.addAgent(Agent);
+    public void addAgent(Agent agent) {
+        agentDAO.addAgent(agent);
     }
  
     @Override
     @Transactional
     public List<Agent> getAllAgents() {
-        return AgentDAO.getAllAgents();
+        return agentDAO.getAllAgents();
     }
  
     @Override
     @Transactional
-    public void deleteAgent(Integer AgentId) {
-        AgentDAO.deleteAgent(AgentId);
+    public void deleteAgent(Integer agentId) {
+        agentDAO.deleteAgent(agentId);
     }
  
-    public Agent getAgent(int empid) {
-        return AgentDAO.getAgent(empid);
+    public Agent getAgent(int agentId) {
+        return agentDAO.getAgent(agentId);
     }
  
-    public Agent updateAgent(Agent Agent) {
+    public Agent updateAgent(Agent agent) {
         // TODO Auto-generated method stub
-        return AgentDAO.updateAgent(Agent);
+        return agentDAO.updateAgent(agent);
     }
  
-    public void setAgentDAO(AgentDAO AgentDAO) {
-        this.AgentDAO = AgentDAO;
+    public void setAgentDAO(AgentDAO agentDAO) {
+        this.agentDAO = agentDAO;
     }
 
 }
