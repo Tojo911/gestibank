@@ -6,13 +6,13 @@ import com.wha.model.Agent;
 
 public interface AgentDAO {
 
-	public void addAgent(Agent Agent);
+	public void addAgent(Agent agent);
 
 	public List<Agent> getAllAgents();
 
-	public void deleteAgent(Integer AgentId);
+	public void deleteAgent(Integer agentId);
 
-	public Agent updateAgent(Agent Agent);
+	public Agent updateAgent(Agent agent);
 
-	public Agent getAgent(int Agentid);
+	public Agent getAgent(int agentId);
 }
