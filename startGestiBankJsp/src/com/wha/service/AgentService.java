@@ -3,16 +3,15 @@ package com.wha.service;
 import java.util.List;
 
 import com.wha.model.Agent;
-toto
 
 public interface AgentService {
-	public void addAgent(Agent Agent);
+	public void addAgent(Agent agent);
 
 	public List<Agent> getAllAgents();
 
-	public void deleteAgent(Integer AgentId);
+	public void deleteAgent(Integer agentId);
 
-	public Agent getAgent(int Agentid);
+	public Agent getAgent(int agentId);
 
-	public Agent updateAgent(Agent Agent);
+	public Agent updateAgent(Agent agent);
 }

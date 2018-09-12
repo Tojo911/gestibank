@@ -2,16 +2,16 @@ package com.wha.service;
 
 import java.util.List;
 
-import com.wha.model.Employee;
+import com.wha.model.Client;
 
 public interface ClientService {
-	public void addEmployee(Employee employee);
+	public void addClient(Client client);
 
-	public List<Employee> getAllEmployees();
+	public List<Client> getAllClients();
 
-	public void deleteEmployee(Integer employeeId);
+	public void deleteClient(Integer clientId);
 
-	public Employee getEmployee(int employeeid);
+	public Client getClient(int clientId);
 
-	public Employee updateEmployee(Employee employee);
+	public Client updateClient(Client client);
 }

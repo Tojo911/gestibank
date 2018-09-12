@@ -11,6 +11,8 @@ import java.util.List;
  * 
  */
 @Entity
+@Inheritance(strategy=InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(name="type",discriminatorType=DiscriminatorType.STRING)
 @NamedQuery(name="Operation.findAll", query="SELECT o FROM Operation o")
 public class Operation implements Serializable {
 	private static final long serialVersionUID = 1L;
