@@ -9,8 +9,8 @@ import java.util.Date;
  * The persistent class for the affectation database table.
  * 
  */
-@Entity
-@NamedQuery(name="Affectation.findAll", query="SELECT a FROM Affectation a")
+//@Entity
+//@NamedQuery(name="Affectation.findAll", query="SELECT a FROM Affectation a")
 public class Affectation implements Serializable {
 	private static final long serialVersionUID = 1L;
 
