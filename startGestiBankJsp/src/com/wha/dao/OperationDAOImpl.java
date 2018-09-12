@@ -1,5 +1,5 @@
 package com.wha.dao;
-/*Test Marie 14h:50*/
+/*Test Marie 14h:52*/
 import java.util.List;
 
 import org.hibernate.SessionFactory;
