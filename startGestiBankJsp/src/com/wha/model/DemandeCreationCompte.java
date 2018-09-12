@@ -11,7 +11,7 @@ import java.util.List;
  * 
  */
 @Entity
-@NamedQuery(name="Demande.findAll", query="SELECT d FROM Demandedecreationdecompte d")
+@NamedQuery(name="Demandecreationcompte.findAll", query="SELECT d FROM Demandedecreationdecompte d")
 public class DemandeCreationCompte implements Serializable {
 	private static final long serialVersionUID = 1L;
 
