@@ -14,37 +14,37 @@ import com.wha.model.Administrateur;
 public class AdministrateurServiceImpl implements AdministrateurService {
 
 	@Autowired
-    private AdministrateurDAO AdministrateurDAO;
+    private AdministrateurDAO administrateurDAO;
  
     @Override
     @Transactional
-    public void addAdministrateur(Administrateur Administrateur) {
-        AdministrateurDAO.addAdministrateur(Administrateur);
+    public void addAdministrateur(Administrateur administrateur) {
+        administrateurDAO.addAdministrateur(administrateur);
     }
  
     @Override
     @Transactional
     public List<Administrateur> getAllAdministrateurs() {
-        return AdministrateurDAO.getAllAdministrateurs();
+        return administrateurDAO.getAllAdministrateurs();
     }
  
     @Override
     @Transactional
-    public void deleteAdministrateur(Integer AdministrateurId) {
-        AdministrateurDAO.deleteAdministrateur(AdministrateurId);
+    public void deleteAdministrateur(Integer administrateurId) {
+        administrateurDAO.deleteAdministrateur(administrateurId);
     }
  
-    public Administrateur getAdministrateur(int empid) {
-        return AdministrateurDAO.getAdministrateur(empid);
+    public Administrateur getAdministrateur(int administrateurId) {
+        return administrateurDAO.getAdministrateur(administrateurId);
     }
  
-    public Administrateur updateAdministrateur(Administrateur Administrateur) {
+    public Administrateur updateAdministrateur(Administrateur administrateur) {
         // TODO Auto-generated method stub
-        return AdministrateurDAO.updateAdministrateur(Administrateur);
+        return administrateurDAO.updateAdministrateur(administrateur);
     }
  
-    public void setAdministrateurDAO(AdministrateurDAO AdministrateurDAO) {
-        this.AdministrateurDAO = AdministrateurDAO;
+    public void setAdministrateurDAO(AdministrateurDAO administrateurDAO) {
+        this.administrateurDAO = administrateurDAO;
     }
 
 }
