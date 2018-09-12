@@ -8,7 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.wha.dao.CompteDAO;
 import com.wha.model.Compte;
-
+//Il fait beau
 @Service
 @Transactional
 public class CompteServiceImpl implements CompteService {
