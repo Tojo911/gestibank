@@ -113,29 +113,12 @@ public class DemandeCreationCompte implements Serializable {
 		this.typecompteacreer = typecompteacreer;
 	}
 
-
-	public Compte getCompte1() {
-		return this.compte1;
-	}
-
-	public void setCompte1(Compte compte1) {
-		this.compte1 = compte1;
-	}
-
 	public Utilisateur getUtilisateur() {
 		return this.utilisateur;
 	}
 
 	public void setUtilisateur(Utilisateur utilisateur) {
 		this.utilisateur = utilisateur;
-	}
-
-	public Compte getCompte2() {
-		return this.compte2;
-	}
-
-	public void setCompte2(Compte compte2) {
-		this.compte2 = compte2;
 	}
 
 	public String getType() {
