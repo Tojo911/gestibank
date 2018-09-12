@@ -40,20 +40,11 @@ public class DemandeCreationCompte implements Serializable {
 	@OneToMany(mappedBy="demande")
 	private List<Affectation> affectations;
 
-	//bi-directional many-to-one association to Compte
-	@ManyToOne
-	@JoinColumn(name="numero_compte_modif")
-	private Compte compte1;
-
 	//bi-directional many-to-one association to Utilisateur
 	@ManyToOne
 	@JoinColumn(name="id_agent")
 	private Utilisateur utilisateur;
 
-	//bi-directional many-to-one association to Compte
-	@ManyToOne
-	@JoinColumn(name="numero_compte_chequier")
-	private Compte compte2;
 
 	public DemandeCreationCompte() {
 	}
