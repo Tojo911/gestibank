@@ -5,7 +5,7 @@ import javax.persistence.*;
 import java.util.Date;
 import java.util.List;
 
-//P2
+//P3
 /**
  * The persistent class for the compte database table.
  * 
